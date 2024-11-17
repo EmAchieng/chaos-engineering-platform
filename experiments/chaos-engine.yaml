@@ -1,0 +1,51 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChaosEngine
+metadata:
+  name: pod-delete-engine
+  namespace: default
+spec:
+  appinfo:
+    appns: 'default'
+    applabel: 'app=nginx'
+    appkind: 'deployment'
+  chaosServiceAccount: litmus-admin
+  experiments:
+    - name: pod-delete
+      spec:
+        components:
+          env:
+            - name: TOTAL_CHAOS_DURATION
+              value: '30'
+            - name: CHAOS_INTERVAL
+              value: '10'
+            - name: FORCE
+              value: 'true'
+            - name: TARGET_PODS
+              value: 'all'
+            - name: LIVENESS_PROBE
+              value: 'false'
+            - name: TARGET_CONTAINER
+              value: 'all'
+            - name: SEVERITY
+              value: '3'
+            - name: LIB
+              value: 'litmus'
+            - name: EXPERIMENT_NAME
+              value: 'pod-delete'
+            - name: CHAOS_ENGINE
+              value: 'true'
+            - name: CHAOS_UID
+              value: '1234'
+            - name: CHAOS_NAMESPACE
+              value: 'default'
+            - name: CHAOS_SERVICE_ACCOUNT
+              value: 'litmus-admin'
+            - name: CHAOS_ENGINE_NAME
+              value: 'pod-delete-engine'
+            - name: APP_NS
+              value: 'default'
+            - name: APP_LABEL
+              value: 'app=nginx'
+            - name: APP_KIND
+              value: 'deployment'
+              
