@@ -4,7 +4,7 @@ This project simulates failures in a live-streaming app using LitmusChaos and Ku
 
 ## What is Chaos Engineering?
 
-Chaos Engineering is the practice of experimenting on a system to build confidence in its ability to withstand turbulent conditions in production. The goal is to identify weaknesses and improve the system's resilience by intentionally introducing failures and observing how the system responds. This practice was popularized by Netflix through their Chaos Monkey tool, which randomly disables production instances to ensure that their services can tolerate unexpected disruptions.
+Chaos Engineering is the practice of experimenting on a system to build confidence in its ability to withstand turbulent conditions in production. The goal is to identify weaknesses and improve the system's resilience by intentionally introducing failures and observing how the system responds. This practice was popularized by Netflix through their [Chaos Monkey](https://netflix.github.io/chaosmonkey/) tool, which randomly disables production instances to ensure that their services can tolerate unexpected disruptions. Netflix later formalized the principles of Chaos Engineering in their [Chaos Engineering](https://principlesofchaos.org/) documentation.
 
 ## Prerequisites
 
